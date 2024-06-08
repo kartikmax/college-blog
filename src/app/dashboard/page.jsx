@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,80 +12,15 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-// import { StoriesList } from "@/app/dashboard/StoriesList";
-import StoriesList from "./StoriesList";
 
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-
-const components = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
-
-const stories = [
-  {
-    imageSrc: "/images/Small image.png",
-    title:
-      "What is the latest program that you are offering in your institute...",
-    institute: "Lucknow Public College of Professional Studies...",
-    date: "27 Dec 2020",
-  },
-  {
-    imageSrc: "/images/Small image (1).png",
-    title: "NMIMS LAT, MST and CET 2024 Registration to Close on March 10",
-    institute: "Lucknow Public College of Professional Studies...",
-    date: "27 Dec 2020",
-  },
-  {
-    imageSrc: "/images/Small image (2).png",
-    title:
-      "What is the latest program that you are offering in your institute...",
-    institute: "Lucknow Public College of Professional Studies...",
-    date: "27 Dec 2020",
-  },
-  {
-    imageSrc: "/images/Small image (3).png",
-    title:
-      "What is the latest program that you are offering in your institute...",
-    institute: "Lucknow Public College of Professional Studies...",
-    date: "27 Dec 2020",
-  },
-];
+import StoriesList from "./StoriesList";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import StoriesGrid from "./StoriesGrid";
+import { stories, storiesNews, components } from "../constants";
 
 export default function Page() {
   return (
@@ -147,10 +81,53 @@ export default function Page() {
       <div className="border border-black flex ">
         <div className="w-3/5">
           <Image src="/imageClg.png" height={450} width={800} />
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            dolor autem incidunt tempore blanditiis quam voluptatum. Repellat
+            cumque nostrum quidem harum quo, quis mollitia eveniet inventore
+            quia quod quisquam molestiae.
+          </div>
         </div>
         <div className="w-2/5 border border-black m-4 ">
           <StoriesList stories={stories} />
         </div>
+      </div>
+      <div className="border  border-[#E3960082] flex flex-col h-28">
+        <div className="text-3xl text-[#E3960082]">Featured News</div>
+        <div></div>
+      </div>
+      <div className="border border-black p-4 flex flex-col justify-center ">
+        <div className="flex justify-center">
+          <Tabs defaultValue="all" className="w-auto ">
+            <TabsList className="grid  grid-cols-4  ">
+              <TabsTrigger value="all">All News</TabsTrigger>
+              <TabsTrigger value="college">College News</TabsTrigger>
+              <TabsTrigger value="exam">Exam News</TabsTrigger>
+              <TabsTrigger value="admission">Addmission 2024</TabsTrigger>
+            </TabsList>
+            <TabsContent value="all">
+              <Card>
+                <StoriesGrid stories={storiesNews} />
+              </Card>
+            </TabsContent>
+            <TabsContent value="college">
+              <Card>
+                <StoriesGrid stories={storiesNews} />
+              </Card>
+            </TabsContent>
+            <TabsContent value="exam">
+              <Card>
+                <StoriesGrid stories={storiesNews} />
+              </Card>
+            </TabsContent>
+            <TabsContent value="admission">
+              <Card>
+                <StoriesGrid stories={storiesNews} />
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
+        <div></div>
       </div>
     </div>
   );

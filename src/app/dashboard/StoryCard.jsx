@@ -1,6 +1,5 @@
 import * as React from "react";
 import Image from "next/image";
-// import { cn } from "@/lib/utils";
 
 const StoryCard = ({ imageSrc, title, institute, date }) => {
   return (
@@ -9,8 +8,6 @@ const StoryCard = ({ imageSrc, title, institute, date }) => {
         <Image
           src={imageSrc}
           alt={title}
-          // layout="fill"
-          // objectFit="cover"
           className="rounded"
           width={410}
           height={170}
