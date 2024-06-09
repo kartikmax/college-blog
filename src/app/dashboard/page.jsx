@@ -4,13 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
+
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+ 
 } from "@/components/ui/navigation-menu";
 
 import Image from "next/image";
@@ -21,13 +17,14 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import StoriesGrid from "./StoriesGrid";
 import { stories, storiesNews, components } from "../constants";
+import Navbar from "./Navbar";
 
 export default function Page() {
   return (
     <div className="m-10">
       dashboard
       <div className="border border-red-400  flex justify-between">
-        <NavigationMenu>
+        {/* <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -54,7 +51,8 @@ export default function Page() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Input type="text" placeholder="search college" className="w-40 " />
+        <Input type="text" placeholder="search college" className="w-40 " /> */}
+        <Navbar/>
       </div>
       <div className="w-auto border border-green-500 h-10 p-2 flex lg:gap-4 sm:gap-1 ">
         <Badge variant="outline" className="bg-slate-300">

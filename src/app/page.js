@@ -18,13 +18,14 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import StoriesList from "./dashboard/StoriesList";
 import { Button } from "@/components/ui/button";
+import Navbar from "./dashboard/Navbar";
 
 export default function Home() {
   return (
     <div className="m-10">
       test page
       <div className="border border-red-400  flex justify-between">
-        <NavigationMenu>
+        {/* <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -59,7 +60,8 @@ export default function Home() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Input type="text" placeholder="search college" className="w-40 " />
+        <Input type="text" placeholder="search college" className="w-40 " /> */}
+        <Navbar/>
       </div>
       <div className="border border-pink-500 flex flex-col lg:flex-row">
         <div className="w-full lg:w-3/5 md:w-3/5">
