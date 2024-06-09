@@ -22,8 +22,7 @@ import Navbar from "./Navbar";
 export default function Page() {
   return (
     <div className="m-10">
-      dashboard
-      <div className="border border-red-400  flex justify-between">
+      <div className=" flex justify-between">
         {/* <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -54,7 +53,7 @@ export default function Page() {
         <Input type="text" placeholder="search college" className="w-40 " /> */}
         <Navbar/>
       </div>
-      <div className="w-auto border border-green-500 h-10 p-2 flex lg:gap-4 sm:gap-1 ">
+      <div className="w-auto  h-10 p-2 flex lg:gap-4 sm:gap-1 ">
         <Badge variant="outline" className="bg-slate-300">
           All 
         </Badge>
@@ -68,7 +67,7 @@ export default function Page() {
           Exam 
         </Badge>
       </div>
-      <div className="border border-pink-500 flex flex-col lg:flex-row">
+      <div className=" flex flex-col lg:flex-row">
         <div className="w-full lg:w-3/5 md:w-3/5">
           <Image src="/imageClg.png" height={450} width={800} />
           <div>
@@ -78,7 +77,7 @@ export default function Page() {
             quia quod quisquam molestiae.
           </div>
         </div>
-        <div className="w-full lg:w-2/5 md:w-2/5 border border-black m-4">
+        <div className="w-full lg:w-2/5 md:w-2/5  m-4">
           <StoriesList stories={stories} />
         </div>
       </div>
@@ -86,7 +85,7 @@ export default function Page() {
         <div className="text-3xl text-[#E3960082]">Featured News</div>
         <div></div>
       </div>
-      <div className="border border-black p-4 flex flex-col justify-center ">
+      <div className=" p-4 flex flex-col justify-center ">
         <div className="flex justify-center">
           <Tabs defaultValue="all" className="w-auto ">
             <TabsList className="grid  grid-cols-4 w-auto  ">
