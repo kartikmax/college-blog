@@ -26,7 +26,7 @@ export default function Page() {
   return (
     <div className="m-10">
       dashboard
-      <div className="border border-black  flex justify-between">
+      <div className="border border-red-400  flex justify-between">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -40,17 +40,9 @@ export default function Page() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Components</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
+                <div className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  test 1
+                </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -64,22 +56,22 @@ export default function Page() {
         </NavigationMenu>
         <Input type="text" placeholder="search college" className="w-40 " />
       </div>
-      <div className="w-[50%] border border-black h-10 p-2 flex justify-around ">
+      <div className="w-auto border border-green-500 h-10 p-2 flex lg:gap-4 sm:gap-1 ">
         <Badge variant="outline" className="bg-slate-300">
-          All news
+          All 
         </Badge>
         <Badge variant="outline" className="bg-slate-300">
-          Addmission alert
+          Addmission 
         </Badge>
         <Badge variant="outline" className="bg-slate-300">
-          College news
+          College 
         </Badge>
         <Badge variant="outline" className="bg-slate-300">
-          Exam News
+          Exam 
         </Badge>
       </div>
-      <div className="border border-black flex ">
-        <div className="w-3/5">
+      <div className="border border-pink-500 flex flex-col lg:flex-row">
+        <div className="w-full lg:w-3/5 md:w-3/5">
           <Image src="/imageClg.png" height={450} width={800} />
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
@@ -88,18 +80,18 @@ export default function Page() {
             quia quod quisquam molestiae.
           </div>
         </div>
-        <div className="w-2/5 border border-black m-4 ">
+        <div className="w-full lg:w-2/5 md:w-2/5 border border-black m-4">
           <StoriesList stories={stories} />
         </div>
       </div>
-      <div className="border  border-[#E3960082] flex flex-col h-28">
+      <div className="border border-[#E3960082] flex flex-col h-28">
         <div className="text-3xl text-[#E3960082]">Featured News</div>
         <div></div>
       </div>
       <div className="border border-black p-4 flex flex-col justify-center ">
         <div className="flex justify-center">
           <Tabs defaultValue="all" className="w-auto ">
-            <TabsList className="grid  grid-cols-4  ">
+            <TabsList className="grid  grid-cols-4 w-auto  ">
               <TabsTrigger value="all">All News</TabsTrigger>
               <TabsTrigger value="college">College News</TabsTrigger>
               <TabsTrigger value="exam">Exam News</TabsTrigger>
